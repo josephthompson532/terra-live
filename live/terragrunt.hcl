@@ -9,7 +9,6 @@ generate "provider" {
     contents = <<-EOF
         provider "aws" {
             region = "${local.aws_account_region}"
-            allowed_account_ids = ["${aws_account_id}"]
         }
     EOF
 }

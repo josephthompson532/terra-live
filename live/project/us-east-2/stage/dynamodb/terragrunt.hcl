@@ -24,7 +24,7 @@ include "root" {
 }
 
 terraform {
-    source = "git@github.com:josephthompson532/terra-modules.git//dynamodb?ref=v0.0.1"
+    source = "git@github.com:josephthompson532/terra-modules.git//modules/data-storage/dynamodb?ref=v0.0.3"
 }
 
 inputs = {

@@ -20,10 +20,10 @@ locals {
 }
 
 include "root" {
-    path = find_in_parent_folders('terragrunt.hcl')
+    path = find_in_parent_folders("terragrunt.hcl")
 }
 
-terraform "dynamodb" {
+terraform {
     source = "git@github.com:josephthompson532/terra-modules.git//dynamodb?ref=v0.0.1"
 }
 

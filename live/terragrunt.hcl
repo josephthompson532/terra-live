@@ -1,6 +1,6 @@
 locals {
-    aws_region = read_terragrunt_config(find_in_parent_folder("region.hcl"))
-    aws_account_region = local.aws_account.locals.aws_account_region
+    aws_region = read_terragrunt_config(find_in_parent_folders("region.hcl"))
+    aws_account_region = local.aws_region.locals.aws_account_region
 }
 
 generate "provider" {
@@ -17,7 +17,7 @@ generate "provider" {
 remote_state {
     backend = "s3"
 
-    generate {
+    generate = {
         path = "backend.tf"
         if_exists = "overwrite_terragrunt"
     }
